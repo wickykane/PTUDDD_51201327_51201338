@@ -219,6 +219,7 @@ function signin(){
                         getjsonuser(username,password);
                         $( "#cancel" ).trigger( "click" );
                         $(".hide-signup").hide();
+						$(".show-signup").show();
                         $(".profile-avatar").show();
                         localStorage.setItem("islogin", 1);
                         //Wgetjsonuser(username,password); //Luu thong tin cua user dang nhap
