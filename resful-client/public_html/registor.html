@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Restful-Client</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/template.css" rel="stylesheet">
+        <script src="jquery-1.12.0.min.js"></script>
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script type="text/javascript">
+       /* $(document).ready(function getInfo(){
+            $.ajax({
+                url:"http://localhost:8080/restful-java/DoubleH/user/all",
+                method:"GET",
+                xhrFields: {
+                    withCredentials: true
+                },
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader('Authorization','Basic '+btoa('admin:admin'));
+                }
+            }).done(function(data){
+                //alert(data);
+                //console.log(data);
+                var styleTop="style=\"border-top:1px solid;\"";
+                var styleBtm="style=\"border-bottom:1px solid;\"";
+            
+            }); 
+        }); */
+        function registration(){
+            var name = $("#name").val();
+            var email = $("#email").val();
+            var username = $("#username").val();
+            var password = $("#password").val();
+            var content ='{"name":"' + name + '","email":"'+email+'","username":"'+username+'","password":"'+password+'","status":1,"id": 55}';
+         // alert(content);    
+        var obj = JSON.parse(content);
+         alert(content);  
+          $.ajax({
+                url:"http://localhost:8080/restful-java/DoubleH/Reg",
+                method:"POST",
+                data: content,
+                contentType: 'application/json'
+            }).done(function(){
+              
+            alert("Bay cai beep")
+            }); 
+    }
+        </script>
+    </head>
+    <body>
+        <div class="container">
+	  <!--Menu Toggle-->
+        <nav class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"  aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">DOUBLE H</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        </div>
+        
+        <div class="container">
+            <div class="page-header">
+		<h1>REGISTRATION</h1>
+            </div>
+            <div class="row">
+                <!--Mẫu khung thông tin -->
+                <div class="col-sm-12">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Information</h3>
+                        </div>
+                        <div class="panel-body">
+                            <!-- Form chi tiết -->
+                          <div class="form-group">
+                            <label for="name">Name</label>
+                            <textarea class="form-control" rows="1" id="name"></textarea>
+                          </div>
+                          <div class="form-group">
+                            <label for="email">Email</label>
+                            <textarea class="form-control" rows="1" id="email"></textarea>
+                          </div>
+                           <div class="form-group">
+                            <label for="username">Username</label>
+                            <textarea class="form-control" rows="1" id="username"></textarea>
+                          </div>
+                           <div class="form-group">
+                            <label for="password">Password</label>
+                            <textarea class="form-control" rows="1" id="password"></textarea>
+                          </div>
+                            <button type="button" onclick="registration();" class="btn btn-primary pull-right" >Create</button>
+                        </div>
+                    </div>
+                </div><!-- /.col-sm-4 Mẫu khung thông tin -->				
+            </div>
+            <hr>
+            <footer>
+                <p>&copy; 2016 Double H Team</p>
+            </footer>
+
+        </div><!--/.container-->
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="js/bootstrap.min.js"></script>
+    </body>
+</html>

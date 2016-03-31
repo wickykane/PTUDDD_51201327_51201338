@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>WowDow</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/styleDropdownList.css">
+	<link type="text/css" rel="stylesheet" href="css/reset.css">
+	<link type="text/css" rel="stylesheet" href="css/plugins.css">
+	<link type="text/css" rel="stylesheet" href="css/style.css">
+	<link type="text/css" rel="stylesheet" href="css/yourstyle.css">
+	<link type="text/css" rel="stylesheet" href="css/style-category.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link type="text/css" rel="stylesheet" href="css/profile.css">
+	<link rel="shortcut icon" href="images/wd.ico">
+        
+         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/plugins.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
+   
+        <script type="text/javascript" src="js/homepage.js"></script>
+        <script type="text/javascript" src="js/user.js"></script>
+        
+       
+</head>
+<body>
+	<!--=============== header ===============-->
+		<header>
+			<!-- Header inner  -->
+			<div class="header-inner">
+				<!-- Logo  -->
+				<div class="logo-holder">
+					<a href="home.html"><img src="images/logo.jpg" alt="WowDow"></a>
+				</div>
+				<!--Logo end  -->
+					<!--Navigation  -->
+				<div class="nav-button-holder">
+					<div class="nav-button vis-x"><span></span><span></span><span></span></div>
+				</div>
+				<!--Logo end  -->
+					<!--Right header-->
+				<div id="right-header">
+                                        <div class="profile-avatar" style="display:none;">
+						<a onclick="goprofile();" href="javascript:void(0)"><img class="my-profile-image img-responsive" src="images/avatar.jpg" alt="profile picture"></a>
+					</div>
+					<input id="search" name="q" type="text" size="40" placeholder="Search..." />
+				</div>
+				<!-- end right header-->
+				
+				<div class="nav-holder">
+					<nav>
+						<ul>
+							<li><a href="home.html" class="act-link" >HOME</a></li>
+                                                        <li><a href="Location.html" >LOCATION</a></li>	
+							<li><a href="Upload.html">UPLOAD</a></li>
+							<li><a class="hide-signup" data-toggle="modal" href="#myModal" style="display:none;" >Sign in</a></li>
+							<li><a class="hide-signup" data-toggle="modal" href="#myModal2" style="display:none;">Sign up</a></li>
+                                                        
+						</ul>
+					</nav>
+                                                        <script>
+                                                           var show = localStorage.getItem('islogin');
+                                                        
+                                                            var myavatar = localStorage.getItem("myavatar");
+                                                             if(show == 1){
+                                                               if(myavatar  != null && myavatar !="null" ) 
+                                                               $(".my-profile-image").attr("src",myavatar);
+                                                               else 
+                                                               $(".my-profile-image").attr("src","http://bootdey.com/img/Content/user_1.jpg");
+                                                                 $('.profile-avatar').show();             
+                                                             }
+                                                             else
+                                                                 $(".hide-signup").show();
+                                                        </script>      
+				</div>
+				<!--navigation end -->
+			</div>
+			<!--Header inner end  -->
+		</header>
+		<!--header end -->
+		
+	<div id="wrapper">
+		<!--=============== Content holder  ===============-->
+		<div class="content-holder elem scale-bg2 transition3 slid-hol">
+		<!-- Fixed title  on the left-->
+		<div class="fixed-title"><span>PROFILE</span></div>
+		<!--=================================mainpage list ==================================-->
+		<div class="category-container">
+			<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="panel panel-default plain profile-panel">
+        <div class="panel-heading white-content p-left p-right">
+            <img class="profile-image img-responsive" src="images/4.jpg" style='height: 100%; width: 100%; object-fit: contain' alt="profile cover">
+        </div>
+        <div class="panel-body">
+            <div id="avatar_contain" class="col-lg-4 col-md-6 col-sm-12">
+                <div class="profile-avatar" >
+                    <img onclick="uploadavatar();" id="my-profile-image2" class="my-profile-image img-responsive" src="images/avatar.jpg" alt="profile picture">
+               
+                </div>
+                     <input  id="inputFileToLoad" type="file" onchange="encodeImageFileAsURL();"/>
+                     <div id="loading" style="display:none;"></div>
+            </div>
+            <div class="col-lg-8 col-md-6 col-sm-12 right-info">
+                <div class="user-name">
+                    <span id="myusername">Wicky Kane</span><div id="btn-logout" class="label label-warning" style="cursor:pointer;">Logout</div>
+                    <a id="btn-edit" class="label label-danger" style="cursor:pointer;" data-toggle="modal" href="#myModal3" onclick="editprofile();">Edit</a>
+                </div>
+				<h1 class="text-left"> Information </h1>
+                <div class="user-information">
+				<div class="field-info text-danger text-left" style="float: left;">Full Name:</div> <div  id="myname" class=" field-content text-left">Wicky Kane </div>
+				<div class="field-info text-danger text-left" style="float: left;">Email:</div> <div  id="myemail" class=" field-content text-left">wickykane@gmail.com </div>
+				<div class="field-info text-danger text-left" style="float: left;">About:</div> <div class=" field-content text-left">You got that long hair, slicked back, white t-shirt
+And I got that good girl faith and a tight little skirt
+And when we go crashing down, we come back every time
+'Cause we never go out of style
+We never go out of style.</div>
+                </div>
+				
+            </div>
+        </div>
+      
+    </div>
+    </div>
+</div>
+
+			<!--============================ PC list ==============================-->
+                         <div id="loading2" style="margin-bottom: 20px;" ></div>
+				<!-- first row -->
+                                <div id="list-contain" style="overflow: hidden;">
+				
+                                </div>
+				<!-- first row end -->
+	
+					<div class="category-custom-list"></div>
+				
+				
+		</div>
+			
+    </div>
+            
+			<!--================================= mainpage list end ==================================-->
+			
+	</div>
+	
+	<!--- edit form -->
+         <div class="modal fade" id="myModal3" role="dialog">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header" style="padding:35px 50px;">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4><span class="glyphicon glyphicon-edit"></span>Edit</h4>
+				</div>
+				<div class="modal-body" style="padding:40px 50px;">
+					<form id="edit_form">
+                                                <div class="form-group" style="display:none;">
+                                                    <label style="float:left"><span class="glyphicon glyphicon-briefcase"></span> ID</label>
+                                                    <input id="myid3" type="text" class="form-control"  placeholder="Enter ID">
+						</div> 
+                                                <div class="form-group">
+							<label style="float:left"><span class="glyphicon glyphicon-briefcase"></span> Name</label>
+							<div id="blank_name3" style="color:red;float:right;margin-left: 30px; display:none;">Must fill name!!!</div>  
+                                                        <input id="myname3" type="text" class="form-control"  placeholder="Enter your name">
+						</div>					
+						<div class="form-group">
+							<label style="float:left"><span class="glyphicon glyphicon-envelope"></span> Email</label>
+							<div id="blank_email3" style="color:red;float:right;margin-left: 30px; display:none;">Must fill email!!!</div>  
+                                                        <input id="myemail3" type="text" class="form-control"  placeholder="Enter email">
+						</div>
+						<div class="form-group">
+							<label style="float:left"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+                                                        <div id="blank_pwd3" style="color:red;float:right;margin-left: 30px; display:none;">Must fill password!!!</div>  
+							<input id="mypwd3" type="password" class="form-control"  placeholder="Enter password">
+						</div>
+						<div class="form-group">
+							<label style="float:left"><span class="glyphicon glyphicon-eye-open"></span> Re-Password</label>
+                                                        <div  id="blank_repwd3"  style="color:red;float:right;margin-left: 30px; display:none;">Must fill Re-password!!!</div>  
+							<input id="myrepwd3" type="password" class="form-control"  placeholder="Enter Re-password">
+						</div>
+                                            <div onclick="updateinforequest();"  class="btn btn-success btn-block" ><span class="glyphicon glyphicon-ok-circle"></span>Update</div>
+                                            <div id="dontmatch3" style="color:red; display:none;">Password does not match!!!</div>
+                                            <div id="status3" style="color:black;margin-top:10px;"></div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button id="cancel3" type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+        
+	<!--=============== Footer ===============-->
+	<div class="navbar-fixed-bottom footer" >
+		<div class="policy-box">
+			<span>Team V </span>
+			<ul>
+				<li id="text-footer"> Web Programing  </li>
+			</ul>
+		</div>
+		<!-- footer social -->
+		<div class="footer-social">
+			<ul>
+				<li><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
+				<li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+				<li><a href="#" target="_blank"><i class="fa fa-instagram"></i></a></li>
+			</ul>
+		</div>
+		<!-- footer social end -->
+		<div class="to-top"><i class="fa fa-angle-up"></i></div>
+	</div>
+	<!-- footer end -->
+	<!--=============== scripts  ===============-->
+	<script type="text/javascript" src="js/profile.js"></script>
+
+</body>
+</html>

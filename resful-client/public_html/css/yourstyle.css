@@ -1,0 +1,253 @@
+/*******************************************************************************
+ Add your custom css styles here
+ *******************************************************************************/
+#text-footer{
+margin-left:20px;
+}
+#search {
+    background: url(../images/search-white.png) no-repeat 10px 6px #fcfcfc;
+    border: 1px solid #d1d1d1;
+    font: bold 12px Arial,Helvetica,Sans-serif;
+    color: #bebebe;
+    width: 150px;
+    padding: 6px 15px 6px 35px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+    -webkit-transition: all 0.7s ease 0s;
+    -moz-transition: all 0.7s ease 0s;
+    -o-transition: all 0.7s ease 0s;
+    transition: all 0.7s ease 0s;
+	float: right;
+    position: relative;
+	margin-right: 20px;
+
+}
+
+#search:focus {
+    width: 200px;
+}
+
+/*footer{
+background-color: black;
+color:  white;
+}*/
+.nav-holder  nav ul li ul {
+/*background-color: black;*/
+margin-top: -8px;
+
+}
+.nav-holder  nav ul li ul li a{
+	width: 100%;
+}
+.nav-holder  nav ul li ul li a:hover{
+	 background: rgba(51,51,51,0.61);
+	 box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	/*background-color: grey;*/
+	-webkit-transition: all 0.4s  ease-in-out;
+	-moz-transition: all 0.4s ease-in-out;
+	-o-transition: all 0.4s ease-in-out;
+	-ms-transition: all 0.4s   ease-in-out;
+	transition: all 0.4s  ease-in-out;
+}
+#middle {
+	 position:absolute;
+	 top: 100%;
+	 left:0;
+	 width:100%;
+	 height:500px;
+	 background:#fff;
+	 z-index:100;
+	 padding:0 50px;
+	 line-height:50px;
+
+}
+/* Chau */
+.img-mainlist {
+	background-color: #292929;
+}
+
+.img-mainlist a{
+	text-decoration: none;
+	color: #fff;
+}
+
+.img-mainlist :hover{
+	color: #12f542;
+	
+}
+
+
+.img-mainlist img {
+    width: 100%;
+    height: 100%;
+	border: 1px solid #292929;
+	
+}
+
+.desc {
+    padding: 10px;
+    text-align: center;
+	font-weight: bold;
+	/*font:16px Georgia;*/
+	font-size: 16px;
+    font-family: Neou-Bold,smonospace;
+}
+
+
+.mainpage-container{
+	position:absolute;
+	background-color: #fff;
+	top:100%;
+	left:0;
+	z-index:100;
+	margin: 0 50px 20px 50px;
+	padding: 10px 20px 100px 20px;
+	
+}
+
+
+.mainpage-list-title{
+	clear:both;
+	width: 100%;
+	padding-bottom: 8px;
+	padding-top: 50px;
+	
+	position: relative;
+	border-bottom: 1px solid #999999;
+	
+}
+
+.mainpage-list-title h2{
+	text-align: left;
+	/*font-family:Georgia;*/
+    font-family: Neou-Bold,smonospace;
+}
+
+.custom-list{
+	width: 100%;
+	margin: 20px 0 3px 0;
+	float:left;
+	position: relative;
+}
+
+.responsive-pc {
+    padding-right: 10px;
+	padding-left: 10px;
+	float: left;
+    width: 25.0%;
+	margin-bottom: 20px;
+	
+}
+
+.responsive-mb {
+    padding-right: 10px;
+	padding-left: 10px;
+	float: left;
+    width: 16.666667%;
+}
+
+
+
+@media only screen and (max-width: 750px){
+    .responsive-pc {
+        width: 49.99999%;
+        margin: 10px 0;
+		
+    }
+	
+	.responsive-mb {
+     width: 33.33333%;
+        margin: 10px 0;
+	}
+	
+	.mainpage-container{
+		margin: 0 0 100px 0;
+	}
+	
+	.custom-list{
+		margin-bottom: 0;
+	}
+}
+
+@media only screen and (max-width: 500px){
+    .responsive-pc {
+        width: 100%;
+    }
+	.responsive-mb {
+        width: 50%;
+    }
+}
+a:hover{
+	text-decoration: none;
+}
+.responsive-pc:hover,.responsive-mb:hover{
+
+    z-index: 1;
+    -webkit-transition: all 150ms ease-in;
+    -webkit-transform: scale(1.08);
+    -ms-transition: all 150ms ease-in;
+    -ms-transform: scale(1.08);   
+    -moz-transition: all 150ms ease-in;
+    -moz-transform: scale(1.08);
+    transition: all 150ms ease-in;
+    transform: scale(1.08);
+}
+#uploadicon {
+padding:3px 0px 0px 100px;
+}
+.btn-signup {
+    color: white;
+	margin-right: 10px;
+	background-color: #128fdc;
+	border-radius: 3px;
+	-webkit-transition: all 150ms ease-in;
+    -ms-transition: all 150ms ease-in;
+    -moz-transition: all 150ms ease-in;
+}
+.btn-signup:hover{
+	background-color:#006dac;
+}
+.header-inner .profile-avatar img {
+    border-radius: 50%;
+    border: 1px solid #e7e7e2;
+	width: 50px;
+	height: 50px;
+}
+.header-inner .profile-avatar {
+	margin: -10px 15px 0px 15px;
+    border-radius: 50%;
+    padding: 0px;
+    border: 1px solid #e7e7e2;
+    float: left;
+
+}
+#right-header {
+	float: right;
+    position: relative;
+	margin-top: 20px;
+}
+@media only screen and  (max-width: 756px) {
+	#search{
+		width: 10px;
+	}
+	#search:focus {
+    width: 120px;
+}
+	
+}
+@media only screen and  (max-width: 540px) {
+	#right-header{
+		margin-top: 9px;
+	}
+}
+@media only screen and  (max-width: 435px) {
+	#right-header{
+		margin-top: 80px;
+		margin-right: -70px;
+	}
+}

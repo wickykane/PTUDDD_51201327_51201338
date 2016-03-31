@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>WowDow</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link type="text/css" rel="stylesheet" href="css/reset.css">
+	<link type="text/css" rel="stylesheet" href="css/plugins.css">
+	<link type="text/css" rel="stylesheet" href="css/style.css">
+	<link type="text/css" rel="stylesheet" href="css/yourstyle.css">
+	<link type="text/css" href=" css/style-upload.css" rel="stylesheet"/>
+
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/user.js"></script>
+        <script type="text/javascript" src="js/homepage.js"></script>
+        <script type="text/javascript" src="js/upload.js"></script>
+	<style>
+		.modal-header, .close {
+			background-color: #5cb85c;
+			color:white !important;
+			text-align: center;
+			font-size: 30px;
+		}
+		.modal-footer {
+			background-color: #f9f9f9;
+		}
+	</style>
+	<!--=============== favicons ===============-->
+	<link rel="shortcut icon" href="images/wd.ico">
+</head>
+<body>
+	<!--Loader  -->
+	<div class="loader" style="display: none;"><i class="fa fa-refresh fa-spin"></i></div>
+	<!--LOader end  -->
+	<!--================= main start ================-->
+	<div id="main" style="opacity: 1;">
+		<!--=============== header ===============-->
+		<header>
+			<!-- Header inner  -->
+			<div class="header-inner">
+				<!-- Logo  -->
+				<div class="logo-holder">
+					<a href="home.html"><img src="images/logo.jpg" alt="WowDow"></a>
+				</div>
+				<!--Logo end  -->
+					<!--Navigation  -->
+				<div class="nav-button-holder">
+					<div class="nav-button vis-x"><span></span><span></span><span></span></div>
+				</div>
+				<!--Logo end  -->
+					<!--Right header-->
+				<div id="right-header">
+                                        <div class="profile-avatar" style="display:none;">
+						<a onclick="goprofile();" href="javascript:void(0)"><img class="my-profile-image img-responsive" src="images/avatar.jpg" alt="profile picture"></a>
+					</div>
+					<input id="search" name="q" type="text" size="40" placeholder="Search..." />
+				</div>
+				<!-- end right header-->
+				
+				<div class="nav-holder">
+					<nav>
+						<ul>
+							<li><a href="home.html" class="act-link" >HOME</a></li>
+                                                        <li><a href="Location.html" >LOCATION</a></li>	
+							<li><a class="show-signup" style="display:none;"  href="Upload.html">UPLOAD</a></li>
+							<li><a class="hide-signup" data-toggle="modal" href="#myModal" style="display:none;" >Sign in</a></li>
+							<li><a class="hide-signup" data-toggle="modal" href="#myModal2" style="display:none;">Sign up</a></li>
+                                                        
+						</ul>
+					</nav>
+                                                        <script>
+                                                           var show = localStorage.getItem('islogin');
+                                                        
+                                                            var myavatar = localStorage.getItem("myavatar");
+                                                             if(show == 1){
+                                                             
+                                                               $(".my-profile-image").attr("src",myavatar);
+          
+                                                                 $('.profile-avatar').show();   
+                                                                 $('.show-signup').show();     
+                                                             }
+                                                             else
+                                                                 $(".hide-signup").show();
+                                                        </script>      
+				</div>
+				<!--navigation end -->
+			</div>
+			<!--Header inner end  -->
+		</header>
+		<!--header end -->
+		<!--=============== wrapper ===============-->
+		
+		<!--========================== Content of upload page ==========================-->
+		<div id="wrapper">
+			<!-- fixed title on the left -->
+			<div class="fixed-title"><span>UPLOAD</span></div>
+			
+			<!--========== Upload area ==========-->
+			<div class="fixed-info-content" >
+				<div class="upload-box" style="overflow: hidden;">
+					<img id="image-upload" class="bg-image" src="images/upload.png" alt="" />
+                                        <input  id="inputFileToLoad" type="file" onchange="encodeImageFileAsURL2();"/>
+                                      
+				</div>
+                              <div id="loading" style="padding-top: 10px;"></div>
+				
+			</div>
+			
+			<!--======== Upload area ends ========-->
+			
+			
+			<!--============ Information area ============-->
+			<div class="scalable-image-content">
+				<div class="image-content">
+					<h1> Information </h1>
+					<div class="separator"></div>
+					
+					<h3> Title </h3>
+					<input id="mytitle" class="textbox" type="text" /> <br/>
+					 <br/>
+					<h3> Description </h3>
+					<textarea id="mydes" style="width:100%;" rows="5"> </textarea>
+                                         <br/>
+					<a class="download-btn" href="#" style="text-decoration: none;" onclick="uploadimage();"> SUBMIT </a>
+					
+				</div>
+			</div>
+			<!--==========  Information area ends ==========-->
+			
+			
+			
+		</div>
+		
+		<!--========================== Content of upload page end ==========================-->
+		
+		<!--=============== Footer ===============-->
+		<div class="navbar-fixed-bottom footer" >
+			<div class="policy-box">
+				<span>Team V </span>
+				<ul>
+					<li id="text-footer">Web Programing	</li>
+				</ul>
+			</div>
+			<!-- footer social -->
+			<div class="footer-social">
+				<ul>
+					<li><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
+					<li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+					<li><a href="#" target="_blank"><i class="fa fa-instagram"></i></a></li>
+				</ul>
+			</div>
+			<!-- footer social end -->
+			<div class="to-top"><i class="fa fa-angle-up"></i></div>
+		</div>
+		<!-- footer end -->
+		</div>
+	<!-- Main end -->
+
+	<!--==Sign in|Sign Up===-->
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" role="dialog">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header" style="padding:35px 50px;">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4><span class="glyphicon glyphicon-lock"></span> Login</h4>
+				</div>
+				<div class="modal-body" style="padding:40px 50px;">
+					<form >
+						<div class="form-group">
+							<label  style="float:left"><span class="glyphicon glyphicon-user"></span> Username</label>
+							<input type="text" class="form-control" placeholder="Enter email">
+						</div>
+						<div class="form-group">
+							<label style="float:left"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+							<input type="password" class="form-control"  placeholder="Enter password">
+						</div>
+						<div class="checkbox">
+							<label><input type="checkbox" value="" checked>Remember me</label>
+						</div>
+						<button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Login</button>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+					<p style="float:right">Not a member? <a data-toggle="modal" href="#myModal2">Sign Up</a></p>
+					<div style="clear:both"></div>
+					<p style="float:right">Forgot <a href="#">Password?</a></p>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<div class="modal fade" id="myModal2" role="dialog">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header" style="padding:35px 50px;">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4><span class="glyphicon glyphicon-lock"></span> Sign Up</h4>
+				</div>
+				<div class="modal-body" style="padding:40px 50px;">
+					<form >
+						<div class="form-group">
+							<label  style="float:left"><span class="glyphicon glyphicon-user"></span> Username</label>
+							<input type="text" class="form-control" placeholder="Enter email">
+						</div>
+						<div class="form-group">
+							<label  style="float:left"><span class="glyphicon glyphicon-envelope"></span> Email</label>
+							<input type="text" class="form-control"  placeholder="Enter email">
+						</div>
+						<div class="form-group">
+							<label  style="float:left"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+							<input type="password" class="form-control"  placeholder="Enter password">
+						</div>
+						<div class="form-group">
+							<label  style="float:left"><span class="glyphicon glyphicon-eye-open"></span> Re-Password</label>
+							<input type="password" class="form-control"  placeholder="Enter Re-password">
+						</div>
+						<button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Create account</button>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<!-- End Sign in|up-->
+
+		<!--=============== scripts  ===============-->
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/plugins.js"></script>
+		<script type="text/javascript" src="js/scripts.js"></script>
+
+
+	</body>
+	</html>

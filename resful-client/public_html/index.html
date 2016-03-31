@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Restful-Client</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/template.css" rel="stylesheet">
+        <script src="jquery-1.12.0.min.js"></script>
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function getInfo(){
+            $.ajax({
+                url:"http://localhost:8080/restful-java/DoubleH/user/all",
+                method:"GET",
+                xhrFields: {
+                    withCredentials: true
+                },
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader('Authorization','Basic '+btoa('admin:admin'));
+                }
+            }).done(function(data){
+                //alert(data);
+                //console.log(data);
+                var styleTop="style=\"border-top:1px solid;\"";
+                var styleBtm="style=\"border-bottom:1px solid;\"";
+                $.each(data, function (i,item){
+                    $(".panel-body").append("<br>");
+                    $(".panel-body").append("<h4 id="+"UserName"+i+" "+styleTop+"><span class=\"glyphicon glyphicon-user\""+"></span> "+item.name+"</h4>");
+                    $(".panel-body").append("<h4 id="+"UserEmail"+i+" "+styleBtm+"><span class=\"glyphicon glyphicon-envelope\""+"></span> "+item.email+"</h4>");
+                    $(".panel-body").append("<button id=\"btn\""+item.id+"type=\"button\" class=\"btn btn-info btn-lg pull-right buttondetail\" data-toggle=\"modal\" data-target=\"#myModal"+item.id+"\">"
+                                +"Chi tiết &raquo;"+
+                            "</button>");
+                    $(".panel-body").append("<br>");
+                    //===detail
+                    $(".panel-body").append("<div class=\"modal fade\" id=\"myModal"+item.id+"\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\">"
+                                +"<div class=\"modal-dialog\" role=\"document\">"
+                                    +"<div class=\"modal-content\">"
+                                        +"<div class=\"modal-header\">"
+                                            +"<button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>"
+                                            +"<h4 class=\"modal-title\" id=\"myModalLabel\">Thông tin chi tiết</h4>"
+                                        +"</div>"
+                                        +"<div class=\"modal-body\">"
+                                            +"<p>Id: "+item.id+"</p>"
+                                            +"<p>Tên: "+item.name+"</p>"
+                                            +"<p>Email: "+item.email+"</p>"
+                                            +"<p>Username: "+item.username+"</p>"
+                                            +"<p>Password: "+item.password+"</p>"
+                                            +"<p>Status: "+item.status+"</p>"
+                                        +"</div>"
+                                        +"<div class=\"modal-footer\">"
+                                            +"<button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Đóng</button>"
+                                        +"</div>"
+                                    +"</div>"
+                                +"</div>"
+                            +"</div>"
+                    );
+                });
+            }); 
+        });
+        </script>
+    </head>
+    <body>
+        <div class="container">
+	  <!--Menu Toggle-->
+        <nav class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"  aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">DOUBLE H</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        </div>
+        
+        <div class="container">
+            <div class="page-header">
+		<h1>DANH SÁCH USER</h1>
+            </div>
+            <div class="row">
+                <!--Mẫu khung thông tin -->
+                <div class="col-sm-12">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Thông tin</h3>
+                        </div>
+                        <div class="panel-body">
+
+                            <!-- Form chi tiết -->
+                            
+                        </div>
+                    </div>
+                </div><!-- /.col-sm-4 Mẫu khung thông tin -->				
+            </div>
+            <hr>
+            <footer>
+                <p>&copy; 2016 Double H Team</p>
+            </footer>
+
+        </div><!--/.container-->
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="js/bootstrap.min.js"></script>
+    </body>
+</html>

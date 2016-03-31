@@ -1,0 +1,79 @@
+/* Dropdown Button */
+.dropbtn {
+    background-color: #F9F9F9;
+    border: none;
+    color: #828282;
+    width: 160px;
+    padding: 16px;
+    font-size: 12px;
+}
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    padding-bottom: 20px;
+    display: inline-block;
+    z-index: 3;
+}
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: rgba(51,51,51,0.61);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: white;
+    text-align: center;
+    font-size: 12px;
+    padding: 5px 0px; 
+    text-decoration: none;
+    display: block;
+}
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background:rgba(0,0,0,0.2)}
+.dropdown-content a:active {
+    color: red;
+}
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    /*background-color: #3e8e41;*/
+}
+
+.menuDropdown{
+}
+.menuBtn {
+    width: 100px;
+    background-color: #FFFFFF;
+    padding: 16px;
+    border: none;
+    font-size: 12px;
+}
+.dropdown-desktop, .dropdown-mobile{
+    /*display: inline-block;*/
+}
+.dropdown-content-desktop, .dropdown-content-mobile{
+    display: none;
+    position: absolute;
+    background: rgba(0,0,0,0.61);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.dropdown-content-desktop a,.dropdown-content-mobile a {
+    color: black;
+    text-align: center;
+    font-size: 12px;
+    padding: 5px 0px; 
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content-desktop a:hover, .dropdown-content-mobile a:hover {background:rgba(0,0,0,0.2)}
+.dropdown-desktop:hover .dropdown-content-desktop, .dropdown-mobile:hover .dropdown-content-mobile {
+    display: block;
+    background: #FFFFFF;
+}
